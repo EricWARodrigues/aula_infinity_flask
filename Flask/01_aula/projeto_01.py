@@ -18,9 +18,10 @@ def endpoint_text():
 def endpoint_api():
 	return {'message': 'Aqui temos um JSON'}
 
+# Retornando pessoas
 pessoas = [
     {
-        "id": 0,
+        "id": 1,
         "nome": "Eric",
         "idade": 33,
         "altura": 1.75,
@@ -32,7 +33,7 @@ pessoas = [
         ]
     },
     {
-        "id": 1,
+        "id": 2,
         "nome": "Alexandre",
         "idade": 54,
         "altura": 1.85,
@@ -43,7 +44,7 @@ pessoas = [
         ]
     },
     {
-        "id": 2,
+        "id": 3,
         "nome": "Rita",
         "idade": 52,
         "altura": 1.65,
@@ -55,48 +56,26 @@ pessoas = [
     }
 ]
 
-# Retornando pessoas
-id = 0
-rota = f'/pessoa'
-@app.route(f'/pessoa')
+@app.route(f'/pessoas', methods=['GET'])
 def listar_pessoas():
-    pessoas = [
-        {
-            "id": 0,
-            "nome": "Eric",
-            "idade": 33,
-            "altura": 1.75,
-            "habilidades": [
-                  "Python",
-                  "Flask",
-                  "HTML",
-                  "CSS"
-            ]
-        },
-        {
-            "id": 1,
-            "nome": "Alexandre",
-            "idade": 54,
-            "altura": 1.85,
-            "habilidades": [
-                  "Matemática",
-                  "Cozinhar",
-                  "Computadores"
-            ]
-        },
-        {
-            "id": 2,
-            "nome": "Rita",
-            "idade": 52,
-            "altura": 1.65,
-            "habilidades": [
-                  "Psicologa",
-                  "Cozinhar",
-                  "Conversar"
-            ]
-        }
-    ]
     return pessoas
+
+@app.route(f'/pessoas/<int:id>', methods=['GET'])
+def detalhar_pessoa(id: int):
+    return pessoas[id]
+
+# @app.route(f'/pessoa/<int:id>', methods=['GET'])
+# def detalhar_pessoa3(id: int):
+#     for num in range(len(pessoas)):
+#          if pessoas[num]['id'] == id + 1:
+#             return pessoas[num]
+
+@app.route(f'/pessoa/<int:id>', methods=['GET'])
+def detalhar_pessoa2(id: int):
+    for pessoa in pessoas:
+         if pessoa.get('id') == id:
+              return pessoa
+    return ({"message": "Pessoa não encontrada"})
 
 # Aqui estamos executando a aplicação
 if __name__ == '__main__':

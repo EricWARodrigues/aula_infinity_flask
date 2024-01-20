@@ -16,6 +16,13 @@ def home():
 def about():
     return render_template('sobre-mim.html')
 
+@app.route('/experiencia')
+def experience():
+    return render_template('experiencia.html')
+
+@app.route('/contato')
+def contact():
+    return render_template('contato.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
