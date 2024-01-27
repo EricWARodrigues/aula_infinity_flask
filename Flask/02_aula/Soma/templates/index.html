@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Somar Dois Numeros </title>
+</head>
+<body>
+  <h1> Soma de Dois Numeros </h1>
+  <form action="/" method="POST">
+    <div>
+      <label for="num-1"> Numero 1 </label><br>
+      <input type="number" name="num-1" id="num-1" step="0.01" required>
+    </div>
+    <div>
+      <label for="num-2"> Numero 2 </label><br>
+      <input type="number" name="num-2" id="num-2" step="0.01" required>
+    </div>
+    <button type="submit"> Somar </button>
+  </form>
+	<!-- 
+		Aqui estamos renderizando uma variavel enviada pelo Flask 
+		Utilizando a sintaxe do Jinja.
+	-->
+  <p> Resultado: {{ soma }} </p>
+</body>
+</html>
