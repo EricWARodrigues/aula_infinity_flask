@@ -4,10 +4,14 @@
     padding: 0px;
 }
 
+/* body {
+    min-height: 100vh;
+} */
+
 nav {
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 3vh;
     text-align: center; /* Centraliza os elementos do nav */
 }
 
@@ -16,4 +20,19 @@ nav a {
     text-decoration: none;
     margin: 0 15px; /* Adiciona margem para separar os links */
     display: inline-block;
+}
+
+main {
+    background-color: #a4a3a6;
+    flex: 100%; /* ocupa o espaço restante */
+    padding: 20px;
+    min-height: 80vh;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    height: 10vh;
+    text-align: center; /* Centraliza os elementos do nav */
 }

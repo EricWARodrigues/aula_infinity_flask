@@ -1,18 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric</title>
-    <link rel="stylesheet" href="/static/css/estilo.css">
-</head>
-<body>
-    <nav>
-        <a href="/sobre-mim">Sobre mim</a>
-        <a href="/experiencia">Experiência Profissional</a>
-        <a href="/contato">Contato</a>
-    </nav>
-    <h1>Eric Rodrigues</h1>
-    
-</body>
-</html>
+{% extends '_layout.html' %}
+
+{% block main %}
+    <div>
+        <h1>Eric Rodrigues</h1>
+    </div>
+    <div>
+        <p>
+            Para conhecer mais você também pode acessar o meu <a href="/static/pdf/Eric Rodrigues.pdf" target="_blank">Curriculo</a>
+        </p>
+    </div>
+{% endblock %}

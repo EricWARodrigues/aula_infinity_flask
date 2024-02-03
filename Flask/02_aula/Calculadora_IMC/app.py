@@ -41,7 +41,7 @@ def somar():
     
 
     # Passando a variavel "soma" para ser renderizada pelo Jinja
-    return render_template('index.html', imc = imc, categoria=categoria)
+    return render_template('index.html', **dicionario_valores)
 
 if __name__ == '__main__':
     app.run(debug=True)

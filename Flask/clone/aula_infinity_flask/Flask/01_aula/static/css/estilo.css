@@ -1,0 +1,19 @@
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center; /* Centraliza os elementos do nav */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px; /* Adiciona margem para separar os links */
+    display: inline-block;
+}
