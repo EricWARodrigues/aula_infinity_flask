@@ -1,0 +1,28 @@
+{% extends '_layout.html' %}
+
+{%block title%}
+    <title>Aula 04</title>
+{%endblock%}
+
+{% block main %}
+    <main>
+        <table border="1" style="border-collapse: collapse">
+            <thead>
+                <th>Nome</th>
+                <th>Completa</th>
+            </thead>
+            <tbody>
+                {% for tarefa in tarefas %}
+                    <tr>
+                        <td>{{ tarefa.get('nome') }}</td>
+                        {% if tarefa.get('completo') %}
+                            <td>Sim</td>
+                        {% else %}
+                            <td>Não</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </main>
+{%endblock%}
